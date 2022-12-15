@@ -1,0 +1,109 @@
+
+
+#inform{
+    margin: auto;
+    padding-top: 50px;
+    width: 100%;
+    height:400px;
+    background:#003380 ;
+}
+#fst{
+    width: 100%;
+    height: 70%;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+#fst>div{
+    width: 23%;
+    height: 100%;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+}
+#inform a{
+    text-decoration: none;
+    color:#fff;
+    margin-top: 8px;
+    font-size: 16px;
+  display: block;
+   
+}
+#inform a:hover{
+color: rgb(231, 207, 207);
+}
+#inform h4{
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 6px;
+}
+.fa-brands{
+    color: white;
+    margin-top: 5px;
+    font-size: 20px;
+
+}
+#sec>div:first-child{
+    width: 8%;
+    margin-left: 1%;
+   
+   
+}
+#sec{
+      display: flex;
+       align-items: center;
+      margin-top: 50px;
+      background-color: #003380;
+}
+#app{
+    width: 30%;  
+   margin-top: 10px;
+   margin-bottom: 10px;
+    margin-left: 280px;
+}
+#down{
+    display: flex;
+}
+.play{
+    width: 150px;
+    height: 50px;
+
+    margin-right: 5px;
+}
+.play img{
+    width: 100%;
+    height: 100%;
+}
+#Disclaimer{
+    width: 100%;
+    background:#0a244a ;
+    color: white;
+    text-align: center;
+
+}
+#dis{
+    text-align: center;
+    text-decoration: underline;
+    padding: 10px 0px;
+}
+#Disclaimer>div{
+    width: 95%;
+    margin-left: 5%;
+    margin-bottom: 10px;
+}
+#Disclaimer>div>p:first-child,#Disclaimer>div>p:last-child{
+    font-size: 14px;
+}
+#Disclaimer>div>p:last-child{
+    margin-left: 5%;
+
+}
+#copy{
+    width: 100%;
+    height: 10%;
+    background: #0a244a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgb(41, 40, 40);
+    color: white;
+}
