@@ -11,7 +11,9 @@ const colorh3={
 function Navbar() {
 
     return (
-<div>
+<div style={{
+    
+}}>
         
     <div
     style={{
@@ -28,21 +30,27 @@ function Navbar() {
     <div style={{
         marginLeft:"50px"
     }}>
-        <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/">
-            <img src="https://www.reliancedigital.in/build/client/images/loaders/rd_logo.svg" alt="" />
+        <NavLink style={{textDecoration:"none" ,display:"flex",alignItems:"center",justifyContent:"space-between",gap:"6px"}} exact activeClassName="active_class" to="/">
+            <img style={{borderRadius:"50%",margin:"5px"}} src="https://tse2.mm.bing.net/th?id=OIP.QE0uFaFF46lWubnhzJqjugHaHa&pid" width={"80px"}  alt="" />
+            <h1 style={{
+                color:"#003380", fontWeight:"500"
+                }}>
+                    <span  style={{
+                        color:"white",fontSize:"50px"
+                        }}>G</span>
+                    <span style={{fontWeight:"700",fontSize:"40px"}}>o</span><span style={{color:"white",fontSize:"50px"}}> S</span>  <span style={{fontWeight:"700",fontSize:"30px"}}>HOP</span></h1>
         </NavLink>
     </div>
     <div style={{margin:"auto"}}>
         <input 
         style=
         {{width:"700px",
-        height:"25px",
+        height:"35px",
         borderRadius:"20px",
-        border:"none",
         padding:"5px",
         paddingLeft:"20px",
         fontSize:"15px",
-        border:"1px Solid yellow"
+        border:"none"   
     }} type="text" placeholder="Find Your Favorite Products" />
     </div>
     <div style={{
