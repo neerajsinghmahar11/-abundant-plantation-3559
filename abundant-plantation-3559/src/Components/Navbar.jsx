@@ -1,5 +1,6 @@
 import {NavLink} from "react-router-dom";
 import "./Navbar.css";
+import { BsCartPlusFill  } from 'react-icons/bs';
 
 const colorh3={
         color:"white",
@@ -66,7 +67,8 @@ function Navbar() {
 
     <h3 style={colorh3}>|</h3>
     
-    <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/cart">
+    <NavLink style={{textDecoration:"none", display:"flex",justifyContent:"center",alignItems:"center"}} exact activeClassName="active_class" to="/cart">
+    <BsCartPlusFill style={{fontSize:"25px",color:"white"}}/>
     <h3 style={colorh3}>Cart</h3>
     </NavLink> 
     
