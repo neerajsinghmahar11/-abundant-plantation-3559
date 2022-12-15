@@ -1,0 +1,16 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav2{
+    margin-top: 100px;
+    display: flex;
+    position: fixed;
+    background-color:#003380;
+    z-index: 100;
+    height: 35px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
