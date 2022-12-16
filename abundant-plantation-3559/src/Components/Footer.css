@@ -1,5 +1,4 @@
 
-
 #inform{
     margin: auto;
     padding-top: 50px;
@@ -11,10 +10,13 @@
     width: 100%;
     height: 70%;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
     justify-content: space-evenly;
 }
 #fst>div{
+    margin: auto;
     width: 23%;
     height: 100%;
     /* border: 1px solid red; */
@@ -49,9 +51,10 @@ color: rgb(231, 207, 207);
    
 }
 #sec{
+    
       display: flex;
        align-items: center;
-      margin-top: 50px;
+      margin-top: 200px;
       background-color: #003380;
 }
 #app{
