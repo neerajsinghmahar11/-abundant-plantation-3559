@@ -74,8 +74,9 @@ function Navbar() {
     
     <h3 style={colorh3}>|</h3> 
     
-    <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/login">
-    <h3 style={colorh3}>Login</h3>
+
+    <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/signin">
+    <h3 style={colorh3}>Sign in</h3>
     </NavLink>
     </div>
     </div>
@@ -87,7 +88,7 @@ function Navbar() {
         <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/mobile">
         <h3 style={colorh3}>Mobile</h3>
         </NavLink>
-        <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/login">
+        <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/login/error">
         <h3 style={colorh3}>Login</h3>
         </NavLink>
         <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/login">
