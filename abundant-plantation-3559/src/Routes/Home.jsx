@@ -1,7 +1,9 @@
-// import { useEffect } from "react";
-// import { useState } from "react";
+import "./Home.css";
+import { NavLink } from "react-router-dom";
 import Carousel from "../Components/Carousel";
-
+import ReactCardSlider from '../Components/ReactCardSlider';
+import axios from "axios";
+import { useState,useEffect } from "react";
 
 const Home=()=>{
     const upperCarousel = [
@@ -52,14 +54,46 @@ const Home=()=>{
         
       ];
     
+
+      const [musicData,setMusicData]=useState([]);
+      
+      useEffect(()=>{
+        axios
+        .get("https://636d5048b567eed48abef381.mockapi.io/musicProduct")
+        .then(data => {setMusicData(data.data)
+        })
+        .catch(error => {console.log(error)
+        });
+
+        },[])
+        
+        
+        const [televisionData,setTelevisionData]=useState([]);
+        
+        useEffect(()=>{
+          axios
+          .get("https://636d5048b567eed48abef381.mockapi.io/tv")
+          .then(data => {setTelevisionData(data.data)
+          })
+          .catch(error => {console.log(error)
+          });
+  
+          },[])
     return (
         <div style={{marginTop:"120px"}}>
-        <h1>Home page</h1>
         
         <Carousel cards={upperCarousel} />   
         <br />    
     
         <Carousel cards={SecCarousel} />       
+        <h2 style={{width:"95%",margin:"auto",marginTop:"20px",fontWeight:"700",fontSize:"20px"}} >DIGITAL AUDIO FEST | 
+          <NavLink to="/music"><span style={{fontSize:"15px",fontWeight:"700",color:"blue"}}>VIEW ALL</span></NavLink>
+        </h2>
+
+
+        <ReactCardSlider style={{}} slides={musicData}/>
+        <hr style={{marginTop:"30px",marginBottom:"30px"}} />
+        <ReactCardSlider style={{}} slides={televisionData}/>
         </div>
     )
 }
