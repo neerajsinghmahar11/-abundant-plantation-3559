@@ -7,14 +7,14 @@ import Cards from "../Components/Cards";
 import Loader from "../Components/Loader";
 
 
-const Television=()=>{
+const Music=()=>{
     const [loader,setLoader]=useState(false);
     const [data ,setData]=useState();
       
       useEffect(()=>{
           setLoader(true)
         axios
-        .get("https://636d5048b567eed48abef381.mockapi.io/tv")
+        .get("https://636d5048b567eed48abef381.mockapi.io/musicProduct")
         .then(data => {setData(data.data)
         setLoader(false);
         })
@@ -34,4 +34,4 @@ const Television=()=>{
             </div>
     )
 }
-export default Television;
+export default Music;

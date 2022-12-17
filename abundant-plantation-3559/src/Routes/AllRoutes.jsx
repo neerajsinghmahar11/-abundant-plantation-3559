@@ -2,9 +2,12 @@ import {Routes, Route} from "react-router-dom";
 import Home from "./Home";
 import Cart from "./cart";
 import Television from "./Television";
-import Mobile from "./Mobile";
 import Signup from "./Signup";
 import Signin from "./Signin";
+import Music from "./Music";
+import Watch from "./Watch";
+import Mobiles from "./Mobiles";
+import "../Components/Navbar.css"
 
 function AllRoutes() {
     
@@ -17,7 +20,9 @@ function AllRoutes() {
         <Route exact path="/signup" element={<Signup/>}/> 
         <Route exact path="/cart" element={<Cart/>}/> 
         <Route exact path="/television" element={<Television/>}/> 
-        <Route exact path="/mobile" element={<Mobile/>}/>
+        <Route exact path="/watches" element={<Watch/>}/>
+        <Route exact path="/mobiles" element={<Mobiles/>}/>
+        <Route exact path="/music" element={<Music/>}/>
         
     </Routes>
     

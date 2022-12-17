@@ -14,6 +14,15 @@
     align-items: center;
     justify-content: space-evenly;
 }
-a.active_class{
-    color: red;
+.active >h3{
+    border-bottom:2px solid red ;
+}
+.nav{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.nav:hover{
+   
+    background-color: red;
 }

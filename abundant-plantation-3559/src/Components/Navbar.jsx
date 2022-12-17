@@ -1,4 +1,4 @@
-import {NavLink} from "react-router-dom";
+import {NavLink,Link} from "react-router-dom";
 import "./Navbar.css";
 import { BsCartPlusFill  } from 'react-icons/bs';
 
@@ -82,30 +82,30 @@ function Navbar() {
     </div>
 
     <div className="nav2">
-        <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/television">
+        <NavLink style={{textDecoration:"none"}} className="nav" exact  to="/television">
         <h3 style={colorh3}>Television</h3>
         </NavLink>
-        <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/mobile">
-        <h3 style={colorh3}>Mobile</h3>
+        <NavLink style={{textDecoration:"none"}} exact className="nav" to="/watches">
+        <h3 style={colorh3}>Watch</h3>
         </NavLink>
-        <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/login/error">
-        <h3 style={colorh3}>Login</h3>
+        <NavLink style={{textDecoration:"none"}} exact className="nav" to="/music">
+        <h3 style={colorh3}>Music</h3>
         </NavLink>
-        <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/login">
-        <h3 style={colorh3}>Login</h3>
+        <NavLink style={{textDecoration:"none"}} exact className="nav" to="/mobiles">
+        <h3 style={colorh3}>Mobiles</h3>
         </NavLink>
-        <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/login">
-        <h3 style={colorh3}>Login</h3>
-        </NavLink>
-        <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/login">
-        <h3 style={colorh3}>Login</h3>
-        </NavLink>
-        <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/login">
-        <h3 style={colorh3}>Login</h3>
-        </NavLink>
-        <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/login">
-        <h3 style={colorh3}>Login</h3>
-        </NavLink>
+        <Link style={{textDecoration:"none"}} exact className="nav" to="#">
+        <h3 style={colorh3}>HOME APPLIANCES</h3>
+        </Link>
+        <Link style={{textDecoration:"none"}} exact className="nav" to="#">
+        <h3 style={colorh3}>COMPUTERS</h3>
+        </Link>
+        <Link style={{textDecoration:"none"}} exact className="nav" to="#">
+        <h3 style={colorh3}>CAMERAS</h3>
+        </Link>
+        <Link style={{textDecoration:"none"}} exact className="nav" to="#">
+        <h3 style={colorh3}>ACCESSORIES</h3>
+        </Link>
     </div>
 </div>
 
