@@ -3,9 +3,6 @@ import {
   Box,
   IconButton,
   useBreakpointValue,
-  Stack,
-  Heading,
-  Text,
   Container,
 } from '@chakra-ui/react';
 // Here we have used react-icons package for the icons
@@ -40,7 +37,6 @@ const side = useBreakpointValue({ base: '30%', md: '40px' });
   // This list contains all the data for carousels
   // This can be static or loaded from a server
     
-    console.log(cards.cards)
 
   return (
     <Box

@@ -13,6 +13,7 @@
     "axios": "^1.2.1",
     "framer-motion": "^7.9.1",
     "react": "^18.2.0",
+    "react-card-slider-component": "^1.0.9",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.4.5",
