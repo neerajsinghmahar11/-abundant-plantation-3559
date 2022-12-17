@@ -14,7 +14,7 @@ const Watch=()=>{
       useEffect(()=>{
           setLoader(true)
         axios
-        .get("https://636e114fb567eed48ad1f04d.mockapi.io/apple_iphone")
+        .get("https://fakestoreapi.com/products")
         .then(data => {setData(data.data)
         setLoader(false);
         })

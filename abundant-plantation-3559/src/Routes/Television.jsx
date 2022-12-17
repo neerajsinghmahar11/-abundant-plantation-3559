@@ -3,8 +3,8 @@ import "./Television.css"
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-import Cards from "../Components/Cards";
 import Loader from "../Components/Loader";
+import OtherCards from "../Components/OtherCards";
 
 
 const Television=()=>{
@@ -14,7 +14,7 @@ const Television=()=>{
       useEffect(()=>{
           setLoader(true)
         axios
-        .get("https://636d5048b567eed48abef381.mockapi.io/tv")
+        .get("https://fakestoreapi.com/products")
         .then(data => {setData(data.data)
         setLoader(false);
         })
@@ -28,7 +28,7 @@ const Television=()=>{
 
     return(
         <div className="container" style={{marginTop:"120px"}}>
-            {loader ? <Loader /> : data?.map((item) => {return <Cards key={item.id} {...item}/>
+            {loader ? <Loader /> : data?.map((item) => {return <OtherCards key={item.id} {...item}/>
   })}
             
             </div>

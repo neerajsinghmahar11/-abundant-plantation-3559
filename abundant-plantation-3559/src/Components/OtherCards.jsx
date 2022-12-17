@@ -58,7 +58,7 @@ import {
                 overflow={"hidden"}
                 lineHeight="tight"
                 isTruncated>
-                {data.title}
+                {data.name}
               </Box>
               <Tooltip
                 label="Add to cart"
@@ -74,10 +74,10 @@ import {
   
             <Flex justifyContent="space-between" alignContent="center">
               <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
-                <Box as="span" color={'gray.600'} fontSize="lg">
+                <Box style={{fontWeight:500, fontSize:"25px"}} as="span" color={'gray.600'}  fontSize="lg">
                 ₹
                 </Box>
-                {data.price}
+                {" "+data.price}
               </Box>
             </Flex>
           </Box>

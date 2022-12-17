@@ -45,9 +45,10 @@ Object.defineProperty(exports, "__esModule", {
         }
       }), /*#__PURE__*/_react.default.createElement("p", {
         className: "slider-card-title"
-      }, slide.title), /*#__PURE__*/_react.default.createElement("p", {
+      }, slide.title), /*#__PURE__*/
+      _react.default.createElement("p", {
         className: "slider-card-description"
-      }, slide.price));
+      }, "Price "+"₹"+slide.price));
     })), /*#__PURE__*/_react.default.createElement(_md.MdChevronRight, {
       size: 40,
       className: "slider-icon right",
