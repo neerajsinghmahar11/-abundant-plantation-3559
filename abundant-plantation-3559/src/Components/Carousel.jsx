@@ -40,7 +40,6 @@ const side = useBreakpointValue({ base: '30%', md: '40px' });
   // This list contains all the data for carousels
   // This can be static or loaded from a server
     
-    console.log(cards.cards)
 
   return (
     <Box
