@@ -4,6 +4,7 @@ import Carousel from "../Components/Carousel";
 import ReactCardSlider from '../Components/ReactCardSlider';
 import axios from "axios";
 import { useState,useEffect } from "react";
+import ReactCardSlider2 from "../Components/ReactCardSlider2";
 
 const Home=()=>{
     const upperCarousel = [
@@ -81,10 +82,14 @@ const Home=()=>{
           },[])
     return (
         <div style={{marginTop:"120px"}}>
-        
+        <div>
+
         <Carousel cards={upperCarousel} />   
-        <br />    
+        </div>
+        <br />
+        <div>
         <Carousel cards={SecCarousel} />       
+        </div>   
 
     
         
@@ -101,8 +106,10 @@ const Home=()=>{
         <h2 style={{width:"95%",margin:"auto",marginTop:"20px",fontWeight:"700",fontSize:"20px"}} >DIGITAL TELEVISION FEST | 
           <NavLink to="/music"><span style={{fontSize:"15px",fontWeight:"700",color:"blue"}}>VIEW ALL</span></NavLink>
         </h2>
+        
         <hr style={{marginTop:"30px",marginBottom:"30px"}} />
-        <ReactCardSlider style={{}} slides={televisionData}/>
+
+        <ReactCardSlider2 style={{}} slides={televisionData}/>
         
 
 

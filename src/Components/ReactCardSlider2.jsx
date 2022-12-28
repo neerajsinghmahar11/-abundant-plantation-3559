@@ -1,42 +1,43 @@
 
-
 require("core-js/modules/es.symbol.description.js");
 
 var _react = _interopRequireDefault(require("react"));
 
-require("./Slider.css");
+require("./Slider2.css");
 
 var _md = require("react-icons/md");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const ReactCardSlider = props => {
-  function clicko(id){
-    window.location.href=`/product/${id}`
-}
+const ReactCardSlider2 = props => {
+
+    function clicko(id){
+            window.location.href=`/product/${id}`
+    }
 
   const slideLeft = () => {
-    var slider = document.getElementById("slider");
+    var slider = document.getElementById("slider1");
     slider.scrollLeft = slider.scrollLeft - 340;
   };
 
   const slideRight = () => {
-    var slider = document.getElementById("slider");
+    var slider = document.getElementById("slider1");
     slider.scrollLeft = slider.scrollLeft + 340;
   };
   return /*#__PURE__*/_react.default.createElement("div", {
     id: "main-slider-container"
   }, /*#__PURE__*/_react.default.createElement(_md.MdChevronLeft, {
     size: 40,
-    className: "slider-icon left",
+    className: "slider-icon left1",
     onClick: slideLeft
   }), /*#__PURE__*/_react.default.createElement("div", {
-    id: "slider"
+    id: "slider1"
   }, props.slides.map((slide, index) => {
-    return /*#__PURE__*/_react.default.createElement("div", {
+    return /*#__PURE__*/_react.default.createElement("div",{
       className: "slider-card",
       key: index,
-      onClick: () => clicko(slide.id),
+      onClick: () => clicko(slide.id) ,
+      
     }, /*#__PURE__*/_react.default.createElement("div", {
       className: "slider-card-image",
       style: {
@@ -51,9 +52,9 @@ const ReactCardSlider = props => {
       }, "Price " + "₹" + slide.price));
   })), /*#__PURE__*/_react.default.createElement(_md.MdChevronRight, {
     size: 40,
-    className: "slider-icon right",
+    className: "slider-icon right1",
     onClick: slideRight
   }));
 };
 
-export default ReactCardSlider;
+export default ReactCardSlider2
