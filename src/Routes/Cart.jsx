@@ -15,11 +15,11 @@ import CartProducts from "../Components/CartProducts";
         const Remove =(id) => {
             
             fetch(`https://cheerful-dungarees-slug.cyclic.app/cart/${id}`, {
-            method: "DELETE",
-            headers: {
-                "content-type": "application/json"
-            }
-        }); 
+                method: "DELETE",
+                headers: {
+                    "content-type": "application/json"
+                }
+            }); 
         }
     useEffect(()=>{
         setLoader(true)
@@ -38,7 +38,7 @@ import CartProducts from "../Components/CartProducts";
     return (
         <div className="container" style={{ marginTop: "120px" }}>
             {loader ? <Loader /> : data?.map((item) => {
-                return <CartProducts key={item.id} data={item} fun={Remove} />
+                return <CartProducts key={item.id} data={item} Remove={Remove} />
             })}
         </div>
     )

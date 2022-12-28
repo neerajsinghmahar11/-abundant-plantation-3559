@@ -14,16 +14,13 @@ import { Button } from '@chakra-ui/react'
 // import { useNavigate } from 'react-router-dom';
 // import ProductDetails from '././Routes/ProductDetails';
 //   import axios from 'axios';
-function CartProducts({data,fun}) {
+function CartProducts({data,Remove}) {
     // const Navigate=useNavigate();
 
     
 
     return (
         <Flex p={50} w="full" alignItems="center" justifyContent="center">
-            <Box>
-                { }
-            </Box>
 
             <Box
                 bg={useColorModeValue('white', 'gray.800')}
@@ -75,7 +72,7 @@ function CartProducts({data,fun}) {
                             color={'gray.800'}
                             fontSize={'1.2em'}>
                             <chakra.a   display={'flex'}>
-                                <Button onClick={() =>fun(data.id) } colorScheme='red'>Remove</Button>
+                                <Button onClick={() =>Remove(data.id) } colorScheme='red'>Remove</Button>
                             </chakra.a>
                         </Tooltip>
                     </Flex>

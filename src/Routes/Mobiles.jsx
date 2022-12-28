@@ -26,7 +26,7 @@ const Watch=()=>{
 
     return(
         <div className="container" style={{marginTop:"120px"}}>
-            {loader ? <Loader /> : data?.map((item) => { if(item.category=="Mobile"){return <Cards key={item.id} {...item}/>}
+            {loader ? <Loader /> : data?.map((item) => { if(item.category==="Mobile"){return <Cards key={item.id} {...item}/>}
   })}
             
             </div>

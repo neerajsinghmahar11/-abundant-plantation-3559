@@ -1,6 +1,5 @@
 import {
     Box,
-    chakra,
     Container,
     Stack,
     Text,
@@ -12,14 +11,13 @@ import {
     SimpleGrid,
     StackDivider,
     useColorModeValue,
-    VisuallyHidden,
     List,
     ListItem,
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { useEffect,useContext ,useState } from 'react';
 import { MdLocalShipping } from 'react-icons/md';
-import {    useParams, Navigate } from 'react-router-dom';
+import {    useParams } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
 
 export default function ProductDetails() {
