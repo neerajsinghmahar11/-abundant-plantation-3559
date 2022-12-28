@@ -8,6 +8,8 @@ import Music from "./Music";
 import Watch from "./Watch";
 import Mobiles from "./Mobiles";
 import "../Components/Navbar.css"
+import ProductDetails from "./ProductDetails";
+import PrivateRoute from "../Context/PrivateRoute";
 
 function AllRoutes() {
     
@@ -16,14 +18,14 @@ function AllRoutes() {
     <br />
     <Routes>
         <Route exact path="/"  element={<Home/>}/>
-        <Route exact path="/signin" element={<Signin/>}/> 
+        <Route exact path="/signin" element={<Signin />}/> 
         <Route exact path="/signup" element={<Signup/>}/> 
-        <Route exact path="/cart" element={<Cart/>}/> 
+        <Route exact path="/cart" element={<PrivateRoute><Cart/></PrivateRoute>}/> 
         <Route exact path="/television" element={<Television/>}/> 
         <Route exact path="/watches" element={<Watch/>}/>
         <Route exact path="/mobiles" element={<Mobiles/>}/>
         <Route exact path="/music" element={<Music/>}/>
-        
+        <Route exact path="/product/:id" element={<ProductDetails/>}/>
     </Routes>
     
 </div>;

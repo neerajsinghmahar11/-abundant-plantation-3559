@@ -4,19 +4,19 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import Loader from "../Components/Loader";
-import OtherCards from "../Components/OtherCards";
-
+import Cards from "../Components/Cards";
 
 const Television=()=>{
     const [loader,setLoader]=useState(false);
     const [data ,setData]=useState();
-      
-      useEffect(()=>{
-          setLoader(true)
+
+
+    useEffect(()=>{
+    setLoader(true)
         axios
-        .get("https://fakestoreapi.com/products")
-        .then(data => {setData(data.data)
-        setLoader(false);
+        .get("https://cheerful-dungarees-slug.cyclic.app/Products")
+            .then(data => {setData(data.data)
+            setLoader(false);   
         })
         .catch(error => {console.log(error)
         setLoader(false);
@@ -24,12 +24,14 @@ const Television=()=>{
 
         },[])
 
-        console.log(data)
+        // let televisionData=data.filter(item=>{
+        //     return item.category=="Television";
+        // })
 
     return(
         <div className="container" style={{marginTop:"120px"}}>
-            {loader ? <Loader /> : data?.map((item) => {return <OtherCards key={item.id} {...item}/>
-  })}
+            {loader ? <Loader /> : data?.map((item) => { if(item.category=="Television"){return <Cards key={item.id} {...item}/>}
+            })}
             
             </div>
     )

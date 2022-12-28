@@ -4,8 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import Loader from "../Components/Loader";
-import OtherCards from "../Components/OtherCards";
-
+import Cards from "../Components/Cards";
 
 const Music=()=>{
     const [loader,setLoader]=useState(false);
@@ -14,7 +13,7 @@ const Music=()=>{
       useEffect(()=>{
           setLoader(true)
         axios
-        .get("https://fakestoreapi.com/products")
+        .get("https://cheerful-dungarees-slug.cyclic.app/Products")
         .then(data => {setData(data.data)
         setLoader(false);
         })
@@ -24,11 +23,10 @@ const Music=()=>{
 
         },[])
 
-        console.log(data)
 
     return(
         <div className="container" style={{marginTop:"120px"}}>
-            {loader ? <Loader /> : data?.map((item) => {return <OtherCards key={item.id} {...item}/>
+            {loader ? <Loader /> : data?.map((item) => { if(item.category=="music"){return <Cards key={item.id} {...item}/>}
   })}
             
             </div>
