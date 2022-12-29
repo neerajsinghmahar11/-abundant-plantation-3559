@@ -19,7 +19,19 @@ import {
   
   export default function Signup() {
     const [showPassword, setShowPassword] = useState(false);
-  
+    const [ResData, setResData] = useState({
+      firstName:"", lastName:"",Email:"",Password:""
+    });
+  let name,value;
+    const handleInput=(e)=>{
+      console.log(e);
+      name=e.target.name;
+      value=e.target.value;
+
+      setResData({...ResData, [name]:value});
+    }
+    console.log(ResData)
+
     return (
       <Flex
         minH={'100vh'}
@@ -45,24 +57,24 @@ import {
                 <Box>
                   <FormControl id="firstName" isRequired>
                     <FormLabel>First Name</FormLabel>
-                    <Input type="text" />
+                    <Input value={ResData.firstName} type="text" id='FirstName' name='firstName' onChange={handleInput} />
                   </FormControl>
                 </Box>
                 <Box>
                   <FormControl id="lastName">
                     <FormLabel>Last Name</FormLabel>
-                    <Input type="text" />
+                    <Input type="text" value={ResData.lastName} id='LastName' name='lastName' onChange={handleInput} />
                   </FormControl>
                 </Box>
               </HStack>
               <FormControl id="email" isRequired>
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input type="email" value={ResData.Email} id='Email' name='Email' onChange={handleInput}/>
               </FormControl>
               <FormControl id="password" isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
-                  <Input type={showPassword ? 'text' : 'password'} />
+                  <Input id='Password' value={ResData.Password} name='Password' onChange={handleInput} type={showPassword ? 'text' : 'password'}  />
                   <InputRightElement h={'full'}>
                     <Button
                       variant={'ghost'}
