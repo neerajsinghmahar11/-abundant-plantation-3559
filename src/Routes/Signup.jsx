@@ -26,7 +26,6 @@ import {
     });
   let name,value;
     const handleInput=(e)=>{
-      console.log(e);
       name=e.target.name;
       value=e.target.value;
 
@@ -58,9 +57,6 @@ import {
       }
       
     }
-    
-    console.log(ResData);
-
     return (
       <Flex
         minH={'100vh'}

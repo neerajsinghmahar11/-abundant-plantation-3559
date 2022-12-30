@@ -10,7 +10,8 @@ const colorh3={
 
 
 function Navbar() {
-
+    let Name=JSON.parse(localStorage.getItem("userName"));
+    
     return (
 <div style={{
     
@@ -76,7 +77,7 @@ function Navbar() {
     
 
     <NavLink style={{textDecoration:"none"}} exact activeClassName="active_class" to="/signin">
-    <h3 style={colorh3}>Sign in</h3>
+    <h3 style={colorh3}>{Name ? "Hi, "+Name : "Sign in"}</h3>
     </NavLink>
     </div>
     </div>
