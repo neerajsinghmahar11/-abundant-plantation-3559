@@ -15,9 +15,11 @@ import {
     // Link,
   } from '@chakra-ui/react';
   import { useState } from 'react';
+  import { useNavigate } from 'react-router-dom';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
   
   export default function Signup() {
+    const navigate= useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [ResData, setResData] = useState({
       firstName:"", lastName:"",Email:"",Password:""
@@ -30,7 +32,34 @@ import {
 
       setResData({...ResData, [name]:value});
     }
-    console.log(ResData)
+
+    function reset() {
+      setResData({
+        firstName:"", lastName:"",Email:"",Password:""});
+    }
+
+    const sendUserData=async()=>{
+      
+      if(ResData.firstName!=="" && ResData.Email!=="" && ResData.Password!==""){
+        
+        await fetch(`https://cheerful-dungarees-slug.cyclic.app/users`, {
+          method: "POST",
+          body: JSON.stringify(ResData),
+          headers: {
+            "content-type": "application/json"
+          }
+        });
+        reset();
+        alert("Account Created Successfully");
+        navigate("/signin");
+      }
+      else{
+        return alert("Please fill all the details")
+      }
+      
+    }
+    
+    console.log(ResData);
 
     return (
       <Flex
@@ -52,29 +81,29 @@ import {
             bg={useColorModeValue('white', 'gray.700')}
             boxShadow={'lg'}
             p={8}>
-            <Stack spacing={4}>
+            <Stack id='form' spacing={4}>
               <HStack>
                 <Box>
                   <FormControl id="firstName" isRequired>
                     <FormLabel>First Name</FormLabel>
-                    <Input value={ResData.firstName} type="text" id='FirstName' name='firstName' onChange={handleInput} />
+                    <Input value={ResData.firstName} required type="text" id='FirstName' name='firstName' onChange={handleInput} />
                   </FormControl>
                 </Box>
                 <Box>
                   <FormControl id="lastName">
                     <FormLabel>Last Name</FormLabel>
-                    <Input type="text" value={ResData.lastName} id='LastName' name='lastName' onChange={handleInput} />
+                    <Input type="text" value={ResData.lastName} required id='LastName' name='lastName' onChange={handleInput} />
                   </FormControl>
                 </Box>
               </HStack>
               <FormControl id="email" isRequired>
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" value={ResData.Email} id='Email' name='Email' onChange={handleInput}/>
+                <Input type="email" value={ResData.Email} id='Email' required name='Email' onChange={handleInput}/>
               </FormControl>
               <FormControl id="password" isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
-                  <Input id='Password' value={ResData.Password} name='Password' onChange={handleInput} type={showPassword ? 'text' : 'password'}  />
+                  <Input id='Password' value={ResData.Password} name='Password' required onChange={handleInput} type={showPassword ? 'text' : 'password'}  />
                   <InputRightElement h={'full'}>
                     <Button
                       variant={'ghost'}
@@ -88,6 +117,7 @@ import {
               </FormControl>
               <Stack spacing={10} pt={2}>
                 <Button
+                onClick={sendUserData}
                   loadingText="Submitting"
                   size="lg"
                   bg={'blue.400'}
