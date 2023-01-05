@@ -10,6 +10,7 @@ import Mobiles from "./Mobiles";
 import "../Components/Navbar.css"
 import ProductDetails from "./ProductDetails";
 import PrivateRoute from "../Context/PrivateRoute";
+import Checkout from "./Checkout";
 
 function AllRoutes() {
     
@@ -18,6 +19,7 @@ function AllRoutes() {
     <br />
     <Routes>
         <Route exact path="/"  element={<Home/>}/>
+        <Route exact path="/home"  element={<Home/>}/>
         <Route exact path="/signin" element={<Signin />}/> 
         <Route exact path="/signup" element={<Signup/>}/> 
         <Route exact path="/cart" element={<PrivateRoute><Cart/></PrivateRoute>}/> 
@@ -26,6 +28,7 @@ function AllRoutes() {
         <Route exact path="/mobiles" element={<Mobiles/>}/>
         <Route exact path="/music" element={<Music/>}/>
         <Route exact path="/product/:id" element={<ProductDetails/>}/>
+        <Route exact path="/checkout" element={<Checkout/>}/>
     </Routes>
     
 </div>;

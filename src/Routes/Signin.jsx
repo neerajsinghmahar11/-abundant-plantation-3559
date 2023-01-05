@@ -11,12 +11,13 @@ import {
     Button,
     Heading,
     Text,
-    useColorModeValue,
   } from '@chakra-ui/react';
   import { useState ,useEffect,useContext } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
   export default function Signin() {
+    const navigate= useNavigate();
     const {authState} = useContext(AuthContext)
     const [loginData,setLoginData]=useState([]);
     const [inputLogin,setInputLogin]=useState({
@@ -25,7 +26,9 @@ import { AuthContext } from '../Context/AuthContext';
     });
     let setLocal;
     let Name=JSON.parse(localStorage.getItem("userName"));
-    
+    if(Name){
+      authState.isAuth=true;
+    }
     let name;
     let value;
     const handleInput=(e)=>{
@@ -34,10 +37,6 @@ import { AuthContext } from '../Context/AuthContext';
       setInputLogin({...inputLogin, [name]:value });
     }
     
-    // if(Name=true){
-    //   let form=document.getElementById("loginForm");
-    //   form.innerHTML=null;
-    // }
 
     useEffect(()=>{
       axios
@@ -63,9 +62,10 @@ import { AuthContext } from '../Context/AuthContext';
           if(!checkup){
             alert("wrong Details")
           }else{
-            alert("success")
+            alert("Logged in successfully")
             authState.isAuth=true;
             localStorage.setItem("userName",JSON.stringify(setLocal));
+            window.location.href="/";
           }
 
           }else{
@@ -83,14 +83,23 @@ import { AuthContext } from '../Context/AuthContext';
           
         }
 
+        const logoutUser=()=>{
+          alert("Logged Out")
+          localStorage.removeItem("userName");
+          window.location.href="/signin";
+        }
+
+
     return(
-      <div>{Name ? <button style={{backgroundColor:"red",marginTop:"120px",color:"white",fontSize:"20px", padding:"6px",borderRadius:"20px"}}>Logout</button> : "" } 
+      
+      <div>{Name ? <div style={{width:"fit-content",margin:"auto",marginTop:"150px"}}>
+      {Name ? <><h1 style={{fontSize:"35px",fontWeight:"700"}}>Hello {Name}</h1><button onClick={logoutUser} style={{ backgroundColor:"red",marginTop:"30px",color:"white",fontSize:"20px", padding:"10px",borderRadius:"20px"}}>Logout from  : {Name}</button></> : "" }
+      </div> : <div id='loginform'>  
             <Flex
-            id='loginForm'
       minH={'100vh'}
       align={'center'}
       justify={'center'}
-      bg={useColorModeValue('gray.50', 'gray.800')}>
+      >
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
           <Heading fontSize={'4xl'}>Sign in to your account</Heading>
@@ -100,7 +109,7 @@ import { AuthContext } from '../Context/AuthContext';
         </Stack>
         <Box
           rounded={'lg'}
-          bg={useColorModeValue('white', 'gray.700')}
+          bg={'white'}
           boxShadow={'lg'}
           p={8}>
           <Stack spacing={4}>
@@ -140,6 +149,6 @@ import { AuthContext } from '../Context/AuthContext';
         </Box>
       </Stack>
     </Flex>
-      </div>
-    )
-  }
+      </div>}</div>
+  )
+}

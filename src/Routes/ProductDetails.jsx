@@ -15,18 +15,17 @@ import {
     ListItem,
 } from '@chakra-ui/react';
 import axios from 'axios';
-import { useEffect,useContext ,useState } from 'react';
+import { useEffect ,useState } from 'react';
 import { MdLocalShipping } from 'react-icons/md';
 import {    useParams } from 'react-router-dom';
-import { AuthContext } from '../Context/AuthContext';
 
 export default function ProductDetails() {
-    const {authState} = useContext(AuthContext)
 
     const [product, setProduct] = useState({});
     const { id } = useParams();
-    console.log(id);
     // console.log(page);
+    let Name=JSON.parse(localStorage.getItem("userName"));
+
     useEffect(() => {
         axios
             .get(`https://cheerful-dungarees-slug.cyclic.app/Products/${id}`)
@@ -35,15 +34,14 @@ export default function ProductDetails() {
             })
             .catch((err) => console.log(err));
     }, [id])
-    console.log(product);
 
     const { imageURL, price, title } = product;
-
+    
     const AddtoCart = async() => {
-        if(!authState.isAuth){
+        if(!Name){
             window.location.href="/signin"
         }else{
-
+            alert("Added to cart")
             try {
                 let res = await fetch(`https://cheerful-dungarees-slug.cyclic.app/cart`, {
                     method: "POST",
