@@ -18,9 +18,10 @@ import axios from 'axios';
 import { useEffect ,useState } from 'react';
 import { MdLocalShipping } from 'react-icons/md';
 import {    useParams } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 export default function ProductDetails() {
 
+    const Navigate=useNavigate();
     const [product, setProduct] = useState({});
     const { id } = useParams();
     // console.log(page);
@@ -39,7 +40,7 @@ export default function ProductDetails() {
     
     const AddtoCart = async() => {
         if(!Name){
-            window.location.href="/signin"
+            Navigate("/signin");
         }else{
             alert("Added to cart")
             try {
